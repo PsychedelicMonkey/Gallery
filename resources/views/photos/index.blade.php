@@ -8,12 +8,17 @@
   <h1>Photos</h1>
 
   @if (count($photos) > 0)
-    <div class="gallery">
-      @foreach ($photos as $photo)
-        <img src="/storage/sm-img/{{ $photo->img }}" alt="">
-        <a href="/photos/{{ $photo->id }}/edit">Edit</a>
-      @endforeach
-    </div>
+    <section class="gallery-container">
+      <div class="gallery">
+        <div class="gallery-sizer"></div>
+        @foreach ($photos as $photo)
+          <a href="/storage/img/{{ $photo->img }}" class="gallery-item">
+            <img src="/storage/sm-img/{{ $photo->img }}" alt="">
+          </a>
+          {{-- <a href="/photos/{{ $photo->id }}/edit">Edit</a> --}}
+        @endforeach
+      </div>
+    </section>
   @else
     <p>No photos found</p>
   @endif

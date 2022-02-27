@@ -1,1 +1,1 @@
-
+.gallery-container{margin:auto;max-width:1450px}.gallery{margin-left:20px}.gallery:after{clear:both;content:"";display:block}.gallery-item,.gallery-sizer{margin-bottom:20px;width:calc(33.333% - 20px)}.gallery-item{float:left}.gallery-item img{display:block;max-width:100%}
