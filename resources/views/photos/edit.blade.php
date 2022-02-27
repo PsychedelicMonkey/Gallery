@@ -7,7 +7,7 @@
     @csrf
     @method('PUT')
 
-    <img src="/storage/{{ $photo->img }}" alt="" style="height: 456px; width: auto;">
+    <img src="/storage/sm-img/{{ $photo->img }}" alt="" style="height: 456px; width: auto;">
 
     <div>
       <label for="caption">Caption</label>

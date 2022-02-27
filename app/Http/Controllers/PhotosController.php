@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Photo;
 
+use Image;
+
 class PhotosController extends Controller
 {
     /**
@@ -43,12 +45,21 @@ class PhotosController extends Controller
         ]);
 
         $image = $request->file('img');
-        $path = $image->store('img', 'public');
-
         [$width, $height] = getimagesize($image);
+        
+        $input['file'] = time() . '.' . $image->getClientOriginalExtension();
+        $destPath = storage_path('app/public/sm-img');
+        
+        $imgFile = Image::make($image->getRealPath());
+        $imgFile->resize(456, null, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destPath . '/' . $input['file']);
+
+        $destPath = storage_path('app/public/img');
+        $image->move($destPath, $input['file']);
 
         Photo::create([
-            'img' => $path,
+            'img' => $input['file'],
             'caption' => $data['caption'],
             'location' => $data['location'],
             'width' => $width,

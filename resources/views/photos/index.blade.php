@@ -10,7 +10,7 @@
   @if (count($photos) > 0)
     <div class="gallery">
       @foreach ($photos as $photo)
-        <img src="/storage/{{ $photo->img }}" alt="" style="width: 100%;">
+        <img src="/storage/sm-img/{{ $photo->img }}" alt="">
         <a href="/photos/{{ $photo->id }}/edit">Edit</a>
       @endforeach
     </div>
