@@ -1,0 +1,31 @@
+$spacing: 20px;
+
+.gallery-container {
+    max-width: 1450px;
+    margin: auto;
+}
+
+.gallery {
+    margin-left: $spacing;
+
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+.gallery-sizer,
+.gallery-item {
+    width: calc(33.333% - $spacing);
+    margin-bottom: $spacing;
+}
+
+.gallery-item {
+    float: left;
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+}
