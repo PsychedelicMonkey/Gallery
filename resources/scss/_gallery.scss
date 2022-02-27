@@ -19,6 +19,10 @@ $spacing: 20px;
         display: block;
         clear: both;
     }
+
+    &.are-images-unloaded {
+        opacity: 0;
+    }
 }
 
 .gallery-sizer,

@@ -9,7 +9,7 @@
 
   @if (count($photos) > 0)
     <section class="gallery-container">
-      <div class="gallery">
+      <div class="gallery are-images-unloaded">
         <div class="gallery-sizer"></div>
         @foreach ($photos as $photo)
           <a href="/storage/img/{{ $photo->img }}" class="gallery-item" data-width="{{ $photo->width }}" data-sub-html=".caption">
