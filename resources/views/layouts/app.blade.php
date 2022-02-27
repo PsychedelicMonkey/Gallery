@@ -12,6 +12,7 @@
     <nav>
       <a href="{{ url('/') }}">Home</a>
       <a href="{{ url('/about') }}">About Us</a>
+      <a href="{{ url('/photos') }}">Photos</a>
     </nav>
   </header>
 
