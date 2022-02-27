@@ -2,11 +2,17 @@ $spacing: 20px;
 
 .gallery-container {
     max-width: 1450px;
-    margin: auto;
+    margin: auto 20px;
+
+    @media (min-width: 500px) {
+        margin: auto auto;
+    }
 }
 
 .gallery {
-    margin-left: $spacing;
+    @media (min-width: 500px) {
+        margin-left: $spacing;
+    }
 
     &::after {
         content: "";
@@ -17,8 +23,16 @@ $spacing: 20px;
 
 .gallery-sizer,
 .gallery-item {
-    width: calc(33.333% - $spacing);
+    width: 100%;
     margin-bottom: $spacing;
+
+    @media (min-width: 500px) {
+        width: calc(50% - $spacing);
+    }
+
+    @media (min-width: 900px) {
+        width: calc(33.333% - $spacing);
+    }
 }
 
 .gallery-item {
