@@ -16,4 +16,9 @@ class Photo extends Model
         'width',
         'height'
     ];
+
+    public function collections()
+    {
+        return $this->belongsToMany(Collection::class);
+    }
 }
