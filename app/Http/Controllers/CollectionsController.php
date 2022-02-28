@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Collection;
+use App\Models\Photo;
 
 class CollectionsController extends Controller
 {
@@ -25,7 +26,7 @@ class CollectionsController extends Controller
      */
     public function create()
     {
-        //
+        return view('collections.create');
     }
 
     /**
@@ -36,7 +37,15 @@ class CollectionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required|string|max:120',
+            'description' => 'nullable|string|max:255',
+            'location' => 'nullable|string|max:120'
+        ]);
+
+        $collection = Collection::create($data);
+
+        return redirect('/collections/' . $collection->id);
     }
 
     /**
@@ -59,7 +68,10 @@ class CollectionsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $collection = Collection::findOrFail($id);
+        $photos = Photo::all();
+
+        return view('collections.edit')->with(['collection' => $collection, 'photos' => $photos]);
     }
 
     /**
@@ -71,7 +83,18 @@ class CollectionsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $collection = Collection::findOrFail($id);
+
+        $data = $request->validate([
+            'name' => 'required|string|max:120',
+            'description' => 'nullable|string|max:255',
+            'location' => 'nullable|string|max:120'
+        ]);
+
+        $collection->photos()->detach();
+        $collection->photos()->attach($request['photos']);
+        
+        return redirect('/collections/' . $collection->id);
     }
 
     /**
@@ -82,6 +105,10 @@ class CollectionsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $collection = Collection::findOrFail($id);
+        $collection->photos()->detach();
+        $collection->delete();
+
+        return redirect('/collections');
     }
 }
