@@ -8,16 +8,26 @@
   <title>{{ config('app.name') }}</title>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="{{ url('/') }}">Home</a>
-      <a href="{{ url('/about') }}">About Us</a>
-      <a href="{{ url('/photos') }}">Photos</a>
-      <a href="{{ url('/collections') }}">Collections</a>
-    </nav>
+  <header class="page-header">
+    <div class="wrap">
+      <a href="{{ url('/') }}" class="nav-logo">Logo</a>
+  
+      <div id="main-nav" class="main-nav">
+        <button id="nav-close">&Cross;</button>
+
+        <nav class="nav-links">
+          <a href="{{ url('/') }}">Home</a>
+          <a href="{{ url('/about') }}">About Me</a>
+          <a href="{{ url('/photos') }}">Photos</a>
+          <a href="{{ url('/collections') }}">Collections</a>
+        </nav>
+      </div>
+  
+      <button id="nav-button"><i class="fa-solid fa-bars"></i></button>
+    </div>
   </header>
 
-  <main>
+  <main id="main-content">
     @yield('content')
   </main>
 

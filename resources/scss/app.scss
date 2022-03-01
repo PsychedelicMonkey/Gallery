@@ -4,8 +4,18 @@
     padding: 0;
 }
 
+#main-content {
+    transition: 0.3s filter ease-in-out;
+}
+
+@import "../fontawesome/scss/fontawesome.scss";
+@import "../fontawesome/scss/solid.scss";
+@import "../fontawesome/scss/brands.scss";
+
 @import "~lightgallery/scss/lightgallery";
 @import "~lightgallery/scss/lg-zoom";
 
+@import "colors";
+@import "header";
 @import "gallery";
 @import "lightbox";

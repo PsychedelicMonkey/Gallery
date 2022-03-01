@@ -22,3 +22,5 @@ mix.js("resources/js/app.js", "public/js").sass(
 if (mix.inProduction()) {
     mix.version();
 }
+
+mix.disableNotifications();
