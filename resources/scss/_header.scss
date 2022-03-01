@@ -24,7 +24,7 @@
         .main-nav {
             position: absolute;
             top: 0;
-            left: -100vw;
+            left: 0;
             width: 100%;
             height: 100%;
             z-index: 101;
@@ -33,7 +33,8 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            transition: 0.5s left ease-in-out;
+            transition: 0.5s transform ease-in-out;
+            transform: translateX(-101%);
 
             @media (min-width: 500px) {
                 width: 65%;
@@ -50,7 +51,7 @@
             }
 
             &.show {
-                left: 0;
+                transform: translateX(0);
             }
 
             #nav-close {
