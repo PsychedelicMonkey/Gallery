@@ -1,3 +1,5 @@
+@import "colors";
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,6 +10,33 @@
     transition: 0.3s filter ease-in-out;
 }
 
+.btn {
+    @include set-background(#111);
+    text-transform: uppercase;
+    border: 2px solid #111;
+    padding: 8px 22px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s ease all;
+    letter-spacing: 1.4px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: transparent;
+        color: #111;
+    }
+
+    &-delete {
+        @extend .btn;
+        background-color: $deleteColor;
+        border-color: $deleteColor;
+
+        &:hover {
+            color: $deleteColor;
+        }
+    }
+}
+
 @import "../fontawesome/scss/fontawesome.scss";
 @import "../fontawesome/scss/solid.scss";
 @import "../fontawesome/scss/brands.scss";
@@ -15,7 +44,7 @@
 @import "~lightgallery/scss/lightgallery";
 @import "~lightgallery/scss/lg-zoom";
 
-@import "colors";
+@import "form";
 @import "header";
 @import "gallery";
 @import "lightbox";

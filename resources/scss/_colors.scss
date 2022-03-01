@@ -1,5 +1,6 @@
 $textMain: #101010;
 $textSecondary: #404040;
+$deleteColor: #ff0000;
 
 @function set-text-color($color) {
     @if (lightness($color) > 70) {
