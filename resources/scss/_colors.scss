@@ -1,2 +1,15 @@
 $textMain: #101010;
 $textSecondary: #404040;
+
+@function set-text-color($color) {
+    @if (lightness($color) > 70) {
+        @return $textMain;
+    } @else {
+        @return #fff;
+    }
+}
+
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color);
+}
