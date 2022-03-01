@@ -48,14 +48,30 @@ class PhotosController extends Controller
         [$width, $height] = getimagesize($image);
         
         $input['file'] = time() . '.' . $image->getClientOriginalExtension();
-        $destPath = storage_path('app/public/sm-img');
         
+        $destPath = storage_path('app/public/img');
         $imgFile = Image::make($image->getRealPath());
+        $imgFile->backup();
+        
+        // Small
+        $imgFile->resize(372, null, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destPath . '/sm-' . $input['file']);
+        $imgFile->reset();
+
+        // Gallery
         $imgFile->resize(456, null, function ($constraint) {
             $constraint->aspectRatio();
-        })->save($destPath . '/' . $input['file']);
+        })->save($destPath . '/gallery-' . $input['file']);
+        $imgFile->reset();
 
-        $destPath = storage_path('app/public/img');
+        // Medium
+        $imgFile->resize(740, null, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destPath . '/md-' . $input['file']);
+        $imgFile->reset();
+
+        // Original
         $image->move($destPath, $input['file']);
 
         Photo::create([
@@ -77,7 +93,8 @@ class PhotosController extends Controller
      */
     public function show($id)
     {
-        //
+        $photo = Photo::findOrFail($id);
+        return view('photos.show')->with('photo', $photo);
     }
 
     /**

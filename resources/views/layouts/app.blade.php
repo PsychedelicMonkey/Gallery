@@ -20,6 +20,7 @@
           <a href="{{ url('/about') }}">About Me</a>
           <a href="{{ url('/photos') }}">Photos</a>
           <a href="{{ url('/collections') }}">Collections</a>
+          <a href="#">Contact Me</a>
         </nav>
       </div>
   
