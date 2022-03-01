@@ -16,7 +16,9 @@ const toggleNav = () => {
 
     if (mainNav.classList.contains("show")) {
         mainContent.style.filter = "blur(4px)";
+        document.body.style.overflow = "hidden";
     } else {
         mainContent.style.filter = "none";
+        document.body.style.overflow = "auto";
     }
 };
