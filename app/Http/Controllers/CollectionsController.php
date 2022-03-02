@@ -91,6 +91,7 @@ class CollectionsController extends Controller
             'location' => 'nullable|string|max:120'
         ]);
 
+        $collection->update($data);
         $collection->photos()->sync($request['photos']);
         
         return redirect('/collections/' . $collection->id);
