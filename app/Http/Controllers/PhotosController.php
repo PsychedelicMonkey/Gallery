@@ -40,8 +40,8 @@ class PhotosController extends Controller
     {
         $data = $request->validate([
             'img' => 'required|image',
-            'caption' => 'nullable',
-            'location' => 'nullable'
+            'caption' => 'nullable|max:255',
+            'location' => 'nullable|max:100'
         ]);
 
         $image = $request->file('img');
@@ -119,8 +119,8 @@ class PhotosController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->validate([
-            'caption' => 'nullable',
-            'location' => 'nullable'
+            'caption' => 'nullable|string|max:255',
+            'location' => 'nullable|string|max:100'
         ]);
 
         Photo::findOrFail($id)->update($data);

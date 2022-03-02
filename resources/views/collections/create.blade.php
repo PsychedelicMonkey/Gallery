@@ -10,17 +10,29 @@
     
         <div class="form-input">
           <label for="name">Name</label>
-          <input type="text" name="name" id="name">
+          <input type="text" name="name" id="name" @error('name')class="error"@enderror>
+
+          @error('name')
+            <div class="form-error">{{ $message }}</div>
+          @enderror
         </div>
     
         <div class="form-input">
           <label for="description">Description</label>
-          <textarea name="description" id="description" cols="30" rows="10"></textarea>
+          <textarea name="description" id="description" cols="30" rows="10" @error('description')class="error"@enderror></textarea>
+
+          @error('description')
+            <div class="form-error">{{ $message }}</div>
+          @enderror
         </div>
     
         <div class="form-input">
           <label for="location">Location</label>
-          <input type="text" name="location" id="location">
+          <input type="text" name="location" id="location" @error('location')class="error"@enderror>
+
+          @error('location')
+            <div class="form-error">{{ $message }}</div>
+          @enderror
         </div>
     
         <button type="submit" class="btn">Create Collection</button>

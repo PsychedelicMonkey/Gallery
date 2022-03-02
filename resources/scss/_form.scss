@@ -41,6 +41,17 @@
             border: 1px solid #ccc;
             outline: none;
             color: $textSecondary;
+
+            &.error {
+                border-color: #ff0000;
+            }
+        }
+
+        .form-error {
+            margin-top: 8px;
+            color: #ff0000;
+            font-weight: 500;
+            font-size: 18px;
         }
     }
 

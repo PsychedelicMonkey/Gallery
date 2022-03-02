@@ -13,12 +13,20 @@
     
         <div class="form-input">
           <label for="caption">Caption</label>
-          <input type="text" name="caption" id="caption" value="{{ $photo->caption }}">
+          <input type="text" name="caption" id="caption" value="{{ $photo->caption }}" @error('caption')class="error"@enderror>
+
+          @error('caption')
+            <div class="form-error">{{ $message }}</div>
+          @enderror
         </div>
     
         <div class="form-input">
           <label for="location">Location</label>
-          <input type="text" name="location" id="location" value="{{ $photo->location }}">
+          <input type="text" name="location" id="location" value="{{ $photo->location }}" @error('caption')class="error"@enderror>
+
+          @error('location')
+            <div class="form-error">{{ $message }}</div>
+          @enderror
         </div>
     
         <button type="submit" class="btn">Save</button>
