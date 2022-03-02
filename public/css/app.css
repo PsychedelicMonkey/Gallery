@@ -1,4 +1,4 @@
-*{box-sizing:border-box;margin:0;padding:0}#main-content{transition:filter .3s ease-in-out}.btn,.btn-delete{background-color:#111;border:2px solid #111;border-radius:5px;color:#fff;font-size:16px;letter-spacing:1.4px;margin:8px auto;padding:8px 22px;text-transform:uppercase;transition:all .3s ease}.btn-delete:hover,.btn:hover{background-color:transparent;color:#111;cursor:pointer}.btn-delete{background-color:red;border-color:red}.btn-delete:hover{color:red}
+*{box-sizing:border-box;margin:0;padding:0}#main-content{transition:filter .3s ease-in-out}.not-found{font-size:24px;font-weight:400;margin-top:26px;text-align:center;text-transform:uppercase}.btn,.btn-delete{background-color:#111;border:2px solid #111;border-radius:5px;color:#fff;font-size:16px;letter-spacing:1.4px;margin:8px auto;padding:8px 22px;text-transform:uppercase;transition:all .3s ease}.btn-delete:hover,.btn:hover{background-color:transparent;color:#111;cursor:pointer}.btn-delete{background-color:red;border-color:red}.btn-delete:hover{color:red}
 
 /*!
  * Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com

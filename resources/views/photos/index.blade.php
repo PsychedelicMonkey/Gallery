@@ -4,6 +4,6 @@
   @if (count($photos) > 0)
     @include('inc.gallery')
   @else
-    <p>No photos found</p>
+    <h3 class="not-found">No photos found</h3>
   @endif
 @endsection

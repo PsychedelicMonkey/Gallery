@@ -3,8 +3,8 @@
 @section('content')
   <header class="collection-header">
     <h1 class="name">{{ $collection->name }}</h1>
-    <h4 class="description">{{ $collection->description }}</h4>
-    <p class="location"><b>Location:</b> {{ $collection->location }}</p>
+    @if ($collection->description)<h4 class="description">{{ $collection->description }}</h4>@endif
+    @if ($collection->location)<p class="location"><b>Location:</b> {{ $collection->location }}</p>@endif
     <p class="count">{{ count($collection->photos()->get()) }} photos</p>
   </header>
 

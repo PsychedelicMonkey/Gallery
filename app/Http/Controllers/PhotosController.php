@@ -52,6 +52,10 @@ class PhotosController extends Controller
         $destPath = storage_path('app/public/img');
         $imgFile = Image::make($image->getRealPath());
         $imgFile->backup();
+
+        // Thumbnail
+        $imgFile->fit(500, 500)->save($destPath . '/thumb-' . $input['file']);
+        $imgFile->reset();
         
         // Small
         $imgFile->resize(372, null, function ($constraint) {
