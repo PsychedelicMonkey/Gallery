@@ -2,7 +2,7 @@
     box-shadow: 2px 3px 5px rgba($color: #000000, $alpha: 0.1);
 
     .wrap {
-        max-width: 1450px;
+        max-width: $maxWidth;
         margin: auto;
         display: flex;
         justify-content: space-between;

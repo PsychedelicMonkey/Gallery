@@ -1,5 +1,5 @@
 .collection-header {
-    max-width: 1250px;
+    max-width: $collectionWidth;
     text-align: center;
     margin: 34px auto 0;
     padding: 0 22px;
@@ -28,7 +28,7 @@
 }
 
 .collection-container {
-    max-width: 1250px;
+    max-width: $collectionWidth;
     text-align: center;
     margin: 34px auto 52px;
     padding: 0 22px;
